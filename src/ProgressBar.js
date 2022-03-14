@@ -4,6 +4,7 @@ import PauseButton from './PauseButton';
 import { useContext, useState, useEffect, useRef } from 'react';
 import SettingsContext from './SettingsContext';
 import { Howl } from 'howler';
+import ReactHowler from 'react-howler/lib/ReactHowler';
 import PlaySound from './PlaySound';
 
 function ProgressBar() {
@@ -22,7 +23,10 @@ function ProgressBar() {
     setSecondsLeft(secondsLeftRef.current);
   }
 
-  const selectedSound = settingsInfo.selectedSound.value;
+  const selectedSound = settingsInfo.selectedSound;
+
+  // console.log(selectedSound);
+  // console.log(settingsInfo.selectedSound)
  
 
   const callMySound = (src) => {
@@ -57,6 +61,10 @@ function ProgressBar() {
       }
       if (secondsLeftRef.current === 0) {
         callMySound(selectedSound)
+        // <ReactHowler
+        // src={selectedSound.value || selectedSound}
+      // />
+
         return switchMode();
       }
 
@@ -104,7 +112,6 @@ function ProgressBar() {
           />
         )}
       </div>
-
       <PlaySound />
     </div>
   );
