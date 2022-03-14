@@ -4,7 +4,7 @@ body{
 }
 main{
   padding-top: 50px;
-  max-width: 340px;
+  max-width: 400px;
   margin: 0 auto;
   text-align: center
 }
@@ -41,6 +41,12 @@ label{
   text-transform: uppercase
 }
 
+.select{
+  margin-bottom: 20px;
+  margin-top: 20px;
+
+}
+
 .button {
   background-color: #4CAF50; /* Green */
   border: none;
@@ -55,9 +61,28 @@ label{
 }
 
 .button1 {
-  background-color: white; 
-  color: black; 
-  border: 2px solid #4CAF50;
+  background-color: #30384b; 
+  color: white; 
+  /* display: inline-block; */
+  text-align: center;
+  border: 2.5px solid lime;
+  height: auto;
+  width: auto;
+  border-radius: 30px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  text-transform: uppercase;
+  /* float: right */
+}
+
+#element1{
+  float: left;
+  margin-top: 35px;
+  width: 150px
+}
+
+#element2{
+  float:right
 }
 
 .dropdown {
@@ -86,8 +111,9 @@ label{
 
 .slider{
   height: 40px;
-  border: 2px solid var(--red);
-  border-radius: 20px
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 .slider.lime{

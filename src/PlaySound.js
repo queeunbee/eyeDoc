@@ -6,7 +6,7 @@ import badum from './music/badum.mp3';
 import bubbly from './music/bubbly.mp3';
 import hey from './music/hey.mp3';
 import impressed from './music/impressed.mp3';
-import { useContext, useState, useEffect, useRef } from 'react';
+import { useContext} from 'react';
 import Select from 'react-select';
 import SettingsContext from './SettingsContext';
 
@@ -22,8 +22,6 @@ function PlaySound() {
 const settingsInfo = useContext(SettingsContext);
 const selectedSound = settingsInfo.selectedSound;
 const setSelectedSound = settingsInfo.setSelectedSound;
-
-
 
   const callMySound = (src) => {
     const soundd = new Howl({
@@ -41,11 +39,14 @@ const setSelectedSound = settingsInfo.setSelectedSound;
           defaultValue={selectedSound}
           onChange={setSelectedSound}
           options={options}
+          className = 'select'
+          id= "element1"
         />
 
         <button
           className='button button1'
           onClick={() => callMySound(selectedSound.value || selectedSound)}
+          id= "element2"
         >
           play sound
         </button>

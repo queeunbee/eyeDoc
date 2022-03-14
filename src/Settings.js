@@ -6,7 +6,7 @@ import {useContext} from 'react';
 function Settings() {
     const settingsInfo = useContext(SettingsContext);
   return (
-    <div style={{ textAlign: 'left' }}>
+    <div>
       <label>Take a break, every {settingsInfo.workMinutes} minutes</label>
       <ReactSlider
         className={'slider cyan'}
