@@ -27,6 +27,8 @@ function Settings() {
         min={1}
         max={45}
       />
+
+     
     </div>
   );
 }
