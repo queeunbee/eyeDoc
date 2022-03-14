@@ -9,6 +9,13 @@ main{
   text-align: center
 }
 
+h1{
+  /* float: left; */
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 60px;
+}
+
 button{
   background-color: transparent;
   color: rgba(255, 255, 255, 0.8);

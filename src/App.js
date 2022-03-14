@@ -16,6 +16,9 @@ function App() {
 
   return (
     <main>
+    <h1> eyeDoc </h1>
+
+
       <SettingsContext.Provider
         value={{
           workMinutes,
