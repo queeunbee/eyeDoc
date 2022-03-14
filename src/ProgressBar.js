@@ -4,7 +4,6 @@ import PauseButton from './PauseButton';
 import { useContext, useState, useEffect, useRef } from 'react';
 import SettingsContext from './SettingsContext';
 import { Howl } from 'howler';
-import elegant from './music/elegant.mp3';
 import PlaySound from './PlaySound';
 
 function ProgressBar() {
@@ -13,7 +12,6 @@ function ProgressBar() {
   const [isPaused, setIsPaused] = useState(true);
   const [mode, setMode] = useState('work');
   const [secondsLeft, setSecondsLeft] = useState(0);
-  const [sound, setSound] = useState(elegant);
 
   const secondsLeftRef = useRef(secondsLeft);
   const isPausedRef = useRef(isPaused);
@@ -24,7 +22,8 @@ function ProgressBar() {
     setSecondsLeft(secondsLeftRef.current);
   }
 
-  const soundSrc = elegant;
+  const selectedSound = settingsInfo.selectedSound.value;
+ 
 
   const callMySound = (src) => {
     const sound = new Howl({
@@ -57,7 +56,7 @@ function ProgressBar() {
         return;
       }
       if (secondsLeftRef.current === 0) {
-        callMySound(soundSrc)
+        callMySound(selectedSound)
         return switchMode();
       }
 

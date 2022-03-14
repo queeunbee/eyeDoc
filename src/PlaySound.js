@@ -8,6 +8,7 @@ import hey from './music/hey.mp3';
 import impressed from './music/impressed.mp3';
 import { useContext, useState, useEffect, useRef } from 'react';
 import Select from 'react-select';
+import SettingsContext from './SettingsContext';
 
 function PlaySound() {
   const options = [
@@ -18,8 +19,11 @@ function PlaySound() {
     { value: impressed, label: 'impressed' },
   ];
 
-  //   const soundSrc = elegant;
-  const [selectedSound, setSelectedSound] = useState(elegant);
+const settingsInfo = useContext(SettingsContext);
+const selectedSound = settingsInfo.selectedSound;
+const setSelectedSound = settingsInfo.setSelectedSound;
+
+
 
   const callMySound = (src) => {
     const soundd = new Howl({
@@ -28,7 +32,6 @@ function PlaySound() {
     });
     soundd.play();
   };
-//   console.log('this.state-->', selectedSound);
 
   return (
     <div>
