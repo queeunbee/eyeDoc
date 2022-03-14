@@ -1,5 +1,5 @@
 import './App.css';
-import Timer from './ProgressBar';
+import ProgressBar from './ProgressBar';
 import Settings from './Settings';
 import { useState } from 'react';
 import SettingsContext from './SettingsContext';
@@ -23,7 +23,7 @@ function App() {
         }}
       >
       <Settings/>
-        <Timer />
+        <ProgressBar />
       </SettingsContext.Provider>
     </main>
   );

@@ -3,6 +3,9 @@ import PlayButton from './PlayButton';
 import PauseButton from './PauseButton';
 import { useContext, useState, useEffect, useRef } from 'react';
 import SettingsContext from './SettingsContext';
+import { Howl } from 'howler';
+import elegant from './elegant.mp3';
+import PlaySound from './PlaySound';
 
 function ProgressBar() {
   const settingsInfo = useContext(SettingsContext);
@@ -19,6 +22,16 @@ function ProgressBar() {
     secondsLeftRef.current--;
     setSecondsLeft(secondsLeftRef.current);
   }
+
+  const soundSrc = elegant;
+
+  const callMySound = (src) => {
+    const sound = new Howl({
+      src,
+      html5: true,
+    });
+    sound.play();
+  };
 
   useEffect(() => {
     function switchMode() {
@@ -90,6 +103,8 @@ function ProgressBar() {
           />
         )}
       </div>
+
+      <PlaySound />
     </div>
   );
 }
